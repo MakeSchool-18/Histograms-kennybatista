@@ -5,7 +5,8 @@ from __future__ import division, print_function
 
 
 class Dictogram(dict):
-
+    # here we're Initializing the class, but not giving it values yet.
+    # We give it values in line 23
     def __init__(self, iterable=None):
         """Initialize this histogram as a new dict; update with given items"""
         super(Dictogram, self).__init__()
@@ -18,7 +19,13 @@ class Dictogram(dict):
         """Update this histogram with the items in the given iterable"""
         for item in iterable:
             # TODO: increment item count
-            pass
+            if self.get(item) is not None:
+                self.tokens += 1
+            else:
+                self.tokens += 1
+                self.types += 1
+
+            self[item] = self.get(item, 0 ) + 1
 
     def count(self, item):
         """Return the count of the given item in this histogram, or 0"""
@@ -39,6 +46,7 @@ class Listogram(list):
     def update(self, iterable):
         """Update this histogram with the items in the given iterable"""
         for item in iterable:
+            if self.get(item)
             # TODO: increment item count
             pass
 
